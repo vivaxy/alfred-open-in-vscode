@@ -240,10 +240,10 @@ ajv@^6.10.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alfred-link@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/alfred-link/-/alfred-link-0.3.0.tgz#d7afce495c04d85c6293c9a5abefbe7506ef8dd5"
-  integrity sha512-35Ezi7chQWndog9DETavKBA9Ka6PFR/PvubhgR02WXNGftGsjL58D/mhFL8cQsx+gZojEVfBarNMLpSQRKNe4Q==
+alfred-link@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.npmjs.org/alfred-link/-/alfred-link-0.3.1.tgz#608efa7d57405e8c4ffdb3eca8a278d5067982c5"
+  integrity sha512-EPjh8z+rhl6BhIjrghJV26yd6Chf5rL15ZFq7id0H1Edb0EspYcCS/AylJk7tOMIwSudaVd5MHCg/nrGAJW6Dg==
   dependencies:
     del "^2.2.2"
     make-dir "^1.3.0"
@@ -251,7 +251,7 @@ alfred-link@^0.3.0:
     pify "^2.3.0"
     plist "^2.0.1"
     read-pkg-up "^1.0.1"
-    resolve-alfred-prefs "^1.0.0"
+    resolve-alfred-prefs "^2.0.0"
     sudo-block "^1.2.0"
     user-home "^2.0.0"
 
@@ -268,19 +268,19 @@ alfred-notifier@^0.2.0:
     read-pkg "^2.0.0"
     semver "^5.3.0"
 
-alfy@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/alfy/-/alfy-0.9.0.tgz#bced96331e9e16ac4af9fe1881a308f13327a0c9"
-  integrity sha512-FhfYxTjTNwTCnn0g29/Y9k9fjIozGHYaKhP1GuGLYVUeyP4xWkux2rB7e933rvd8yerXiMDrIwqJUNBoBjkjRA==
+alfy@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.npmjs.org/alfy/-/alfy-0.10.0.tgz#58d673356e43b49791887e2e4a30e731842e6727"
+  integrity sha512-38YpnBNO4wnclQjuqo6HTG2RLtcUO2hCnkf4fViyrBnaFP1UuCXtz5Hg6fj/NQfWCk0c/1L/KNRUOSms6sB4mA==
   dependencies:
-    alfred-link "^0.3.0"
+    alfred-link "^0.3.1"
     alfred-notifier "^0.2.0"
     cache-conf "^0.6.0"
-    clean-stack "^2.0.0"
+    clean-stack "^2.2.0"
     conf "^5.0.0"
     dot-prop "^5.1.0"
     esm "^3.2.18"
-    execa "^2.0.1"
+    execa "^2.0.4"
     got "^9.3.2"
     hook-std "^2.0.0"
     loud-rejection "^2.1.0"
@@ -519,9 +519,9 @@ ci-info@^2.0.0:
   resolved "https://registry.npmjs.org/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
 
-clean-stack@^2.0.0:
+clean-stack@^2.0.0, clean-stack@^2.2.0:
   version "2.2.0"
-  resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
+  resolved "https://registry.npmjs.org/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
   integrity sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==
 
 cli-cursor@^3.1.0:
@@ -849,17 +849,6 @@ cross-spawn@^5.0.1:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
-  integrity sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==
-  dependencies:
-    nice-try "^1.0.4"
-    path-key "^2.0.1"
-    semver "^5.5.0"
-    shebang-command "^1.2.0"
-    which "^1.2.9"
-
 cross-spawn@^7.0.0:
   version "7.0.3"
   resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -1049,12 +1038,12 @@ execa@^0.8.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^2.0.1:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-2.0.3.tgz#4b84301b33042cfb622771e886ed0b10e5634642"
-  integrity sha512-iM124nlyGSrXmuyZF1EMe83ESY2chIYVyDRZKgmcDynid2Q2v/+GuE7gNMl6Sy9Niwf4MC0DDxagOxeMPjuLsw==
+execa@^2.0.4:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/execa/-/execa-2.1.0.tgz#e5d3ecd837d2a60ec50f3da78fd39767747bbe99"
+  integrity sha512-Y/URAVapfbYy2Xp/gb6A0E7iR8xeqOCXsuuaoMn7A5PzrXUK84E1gyiEfq0wQd/GHA6GsoHWwhNq8anb0mleIw==
   dependencies:
-    cross-spawn "^6.0.5"
+    cross-spawn "^7.0.0"
     get-stream "^5.0.0"
     is-stream "^2.0.0"
     merge-stream "^2.0.0"
@@ -2084,11 +2073,6 @@ neo-async@^2.6.0:
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-nice-try@^1.0.4:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
-  integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
-
 normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-data@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-2.5.0.tgz#e66db1838b200c1dfc233225d12cb36520e234a8"
@@ -2334,7 +2318,7 @@ path-is-inside@^1.0.1:
   resolved "https://registry.yarnpkg.com/path-is-inside/-/path-is-inside-1.0.2.tgz#365417dede44430d1c11af61027facf074bdfc53"
   integrity sha1-NlQX3t5EQw0cEa9hAn+s8HS9/FM=
 
-path-key@^2.0.0, path-key@^2.0.1:
+path-key@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
@@ -2677,13 +2661,12 @@ require-main-filename@^2.0.0:
   resolved "https://registry.npmjs.org/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
   integrity sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
 
-resolve-alfred-prefs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/resolve-alfred-prefs/-/resolve-alfred-prefs-1.0.0.tgz#aae914088578829b584a4e6b72507e8c2096ec37"
-  integrity sha1-qukUCIV4gptYSk5rclB+jCCW7Dc=
+resolve-alfred-prefs@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/resolve-alfred-prefs/-/resolve-alfred-prefs-2.0.0.tgz#adb74526ffebbc78c04223e27fe72c17ecb62e83"
+  integrity sha512-j2pAIUz8OqESy4F1yUBO86J1imsNmBE1cAptTBLr3IsgbXaaNxf47HXqxgWpLqc/kLhqv3RXr/WAT3l+oWOdsw==
   dependencies:
     bplist-parser "^0.1.1"
-    path-exists "^3.0.0"
     pify "^2.3.0"
     untildify "^3.0.2"
     user-home "^2.0.0"
@@ -2784,7 +2767,7 @@ semver-regex@^3.1.2:
   resolved "https://registry.npmjs.org/semver-regex/-/semver-regex-3.1.2.tgz#34b4c0d361eef262e07199dbef316d0f2ab11807"
   integrity sha512-bXWyL6EAKOJa81XG1OZ/Yyuq+oT0b2YLlxx7c+mrdYPaPbnj6WgVULXhinMIeZGufuUBu/eVRqXEhiv4imfwxA==
 
-"semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.3.0, semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.3.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
