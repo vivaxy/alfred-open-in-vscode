@@ -10,7 +10,7 @@
     "finder"
   ],
   "author": "vivaxy <xyxuye2007@126.com>",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "alfy": "^0.10.0",
     "fast-glob": "^3.0.4"
