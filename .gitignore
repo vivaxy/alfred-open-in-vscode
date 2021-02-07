@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+yarn-error.log
+node_modules
+.nyc_output
+coverage.lcov
+coverage
