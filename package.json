@@ -17,10 +17,10 @@
   },
   "scripts": {
     "release": "standard-version && npm publish --access=public && git push --follow-tags",
-    "postinstall": "alfy-init",
+    "postinstall": "alfy-init # husky install",
     "preuninstall": "alfy-cleanup",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "prepublishOnly": "# pinst --disable",
+    "postpublish": "# pinst --enable"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
