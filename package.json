@@ -1,6 +1,6 @@
 {
   "name": "alfred-open-in-vscode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Alfred workflow to open in VSCode",
   "main": "index.js",
   "keywords": [

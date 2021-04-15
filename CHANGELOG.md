@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/vivaxy/alfred-open-in-vscode/compare/v1.0.0...v1.0.1) (2021-04-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alfy to ^0.10.0 ([092c427](https://github.com/vivaxy/alfred-open-in-vscode/commit/092c4275ab5e34670f21146599e77df0352b5d26))
+* :bug:  fix alfy-init not run after install ([9bf5a1f](https://github.com/vivaxy/alfred-open-in-vscode/commit/9bf5a1fb56f6bd70c722c08ba9956cbaf531b6cd))
+
 ## 1.0.0 (2021-02-07)
 
 
