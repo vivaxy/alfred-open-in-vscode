@@ -12,7 +12,7 @@
   "author": "vivaxy <xyxuye2007@126.com>",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "alfy": "^0.10.0",
+    "alfy": "^0.11.0",
     "fast-glob": "^3.0.4"
   },
   "scripts": {
