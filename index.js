@@ -8,10 +8,27 @@ const glob = require('fast-glob');
 
 const wds = process.env.wds.split(',');
 
+async function getWds() {
+  return (
+    await Promise.all(
+      wds.map(
+        async (wd) =>
+          await glob(wd, {
+            cwd: '/',
+            onlyDirectories: true,
+            dot: true,
+          }),
+      ),
+    )
+  ).flat();
+}
+
 async function updateProjectsCache() {
+  const matches = await getWds();
+
   const projects = (
     await Promise.all(
-      wds.map(async function (wd) {
+      matches.map(async function (wd) {
         const names = await glob('*', {
           cwd: wd,
           onlyDirectories: true,
