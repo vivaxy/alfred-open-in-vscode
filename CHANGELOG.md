@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/vivaxy/alfred-open-in-vscode/compare/v1.0.1...v1.1.0) (2021-07-14)
+
+
+### Features
+
+* support glob pattern for wds ([66336b9](https://github.com/vivaxy/alfred-open-in-vscode/commit/66336b9703c4cf39fd994cd9bfd09473241f218f)), closes [#10](https://github.com/vivaxy/alfred-open-in-vscode/issues/10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alfy to ^0.11.0 ([c71bdc3](https://github.com/vivaxy/alfred-open-in-vscode/commit/c71bdc3b6999ecd5cc914b314f495b3d0c31cd1f))
+
 ### [1.0.1](https://github.com/vivaxy/alfred-open-in-vscode/compare/v1.0.0...v1.0.1) (2021-04-15)
 
 
