@@ -26,6 +26,10 @@ Alfred 4 workflow to open in VSCode.
 - Type `code` with a space to search. Press `enter` to open selected project in VSCode. Hold `command` and press `enter` to reveal in Finder.
 - Select a file in Finder, type `code` (without space) and press `enter` to open this folder in VSCode.
 
+## Troubleshooting
+
+- Type `code DEBUG` to show the debug info.
+
 ## Related
 
 - [Alfy](https://github.com/sindresorhus/alfy)

@@ -90,40 +90,58 @@ const searchStrategies = {
   },
 };
 
-updateProjectsCache();
-const projects = getProjects();
-const searchResultsByStrategy = [];
-const searchStrategyNames = [
-  'matchFromStart',
-  'matchIncludes',
-  'keywordIncludes',
-];
+function debug() {
+  alfy.output([
+    {
+      title: 'node version',
+      subtitle: process.version,
+    },
+  ]);
+}
 
-projects.forEach(function(project) {
-  for (let i = 0; i < searchStrategyNames.length; i++) {
-    const searchStrategy = searchStrategies[searchStrategyNames[i]];
-    if (searchStrategy(project.name, alfy.input)) {
-      searchResultsByStrategy[i] = searchResultsByStrategy[i] || [];
-      searchResultsByStrategy[i].push(project);
-      return;
-    }
+function main() {
+
+  if (alfy.input === 'DEBUG') {
+    return debug()
   }
-});
 
-const items = searchResultsByStrategy.reduce(function(all, searchResults) {
-  return [...all, ...searchResults];
-}, []);
+  const projects = getProjects();
+  const searchResultsByStrategy = [];
+  const searchStrategyNames = [
+    'matchFromStart',
+    'matchIncludes',
+    'keywordIncludes',
+  ];
 
-const output = items.map(function(project) {
-  const absolutePath = path.join(project.wd, project.name);
-  return {
-    title: project.name,
-    uid: absolutePath,
-    subtitle: absolutePath,
-    arg: absolutePath,
-    autocomplete: project.name,
-    type: 'file',
-  };
-});
+  projects.forEach(function(project) {
+    for (let i = 0; i < searchStrategyNames.length; i++) {
+      const searchStrategy = searchStrategies[searchStrategyNames[i]];
+      if (searchStrategy(project.name, alfy.input)) {
+        searchResultsByStrategy[i] = searchResultsByStrategy[i] || [];
+        searchResultsByStrategy[i].push(project);
+        return;
+      }
+    }
+  });
 
-alfy.output(output, { rerunInterval: 1 });
+  const items = searchResultsByStrategy.reduce(function(all, searchResults) {
+    return [...all, ...searchResults];
+  }, []);
+
+  const output = items.map(function(project) {
+    const absolutePath = path.join(project.wd, project.name);
+    return {
+      title: project.name,
+      uid: absolutePath,
+      subtitle: absolutePath,
+      arg: absolutePath,
+      autocomplete: project.name,
+      type: 'file',
+    };
+  });
+
+  alfy.output(output, { rerunInterval: 1 });
+  updateProjectsCache();
+}
+
+main();
