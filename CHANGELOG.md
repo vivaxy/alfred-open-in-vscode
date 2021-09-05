@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/vivaxy/alfred-open-in-vscode/compare/v1.2.0...v1.3.0) (2021-09-05)
+
+
+### Features
+
+* show all projects when no input ([d81dc6e](https://github.com/vivaxy/alfred-open-in-vscode/commit/d81dc6eecdb3f59c707997340cc0d0ee10771b3c))
+
 ## [1.2.0](https://github.com/vivaxy/alfred-open-in-vscode/compare/v1.1.0...v1.2.0) (2021-09-05)
 
 
