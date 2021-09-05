@@ -28,7 +28,7 @@ async function updateProjectsCache() {
 
   const projects = (
     await Promise.all(
-      matches.map(async function (wd) {
+      matches.map(async function(wd) {
         const names = await glob('*', {
           cwd: wd,
           onlyDirectories: true,
@@ -40,10 +40,10 @@ async function updateProjectsCache() {
         };
       }),
     )
-  ).reduce(function (all, wdProject) {
+  ).reduce(function(all, wdProject) {
     return [
       ...all,
-      ...wdProject.names.map(function (name) {
+      ...wdProject.names.map(function(name) {
         return {
           name,
           wd: wdProject.wd,
@@ -67,19 +67,21 @@ const searchStrategies = {
     function format(v) {
       return v.toLowerCase().replace(/[^a-z0-9]/g, '');
     }
+
     return format(value).startsWith(format(input));
   },
   matchIncludes(value, input) {
     function format(v) {
       return v.toLowerCase().replace(/[^a-z0-9]/g, '');
     }
+
     return format(value).includes(format(input));
   },
   keywordIncludes(value, input) {
     const keywords = input
       .replace(/[^a-z0-9]/g, ' ')
       .split(' ')
-      .filter(function (v) {
+      .filter(function(v) {
         return !!v;
       });
     return keywords.every((keyword) => {
@@ -97,7 +99,7 @@ const searchStrategyNames = [
   'keywordIncludes',
 ];
 
-projects.forEach(function (project) {
+projects.forEach(function(project) {
   for (let i = 0; i < searchStrategyNames.length; i++) {
     const searchStrategy = searchStrategies[searchStrategyNames[i]];
     if (searchStrategy(project.name, alfy.input)) {
@@ -108,11 +110,11 @@ projects.forEach(function (project) {
   }
 });
 
-const items = searchResultsByStrategy.reduce(function (all, searchResults) {
+const items = searchResultsByStrategy.reduce(function(all, searchResults) {
   return [...all, ...searchResults];
 }, []);
 
-const output = items.map(function (project) {
+const output = items.map(function(project) {
   const absolutePath = path.join(project.wd, project.name);
   return {
     title: project.name,
@@ -124,4 +126,4 @@ const output = items.map(function (project) {
   };
 });
 
-alfy.output(output);
+alfy.output(output, { rerunInterval: 1 });
