@@ -32,9 +32,10 @@ Alfred 4 workflow to open in VSCode.
 
 ## Related
 
-- [Alfy](https://github.com/sindresorhus/alfy)
-- [Alfred Workflow Open in WebStorm](https://vivaxyblog.github.io/2015/06/02/alfred-workflow-open-in-webstorm.html)
-- [Alfred 4 Workflow Open in VSCode](https://vivaxyblog.github.io/2019/08/14/alfred-workflow-open-in-vscode.html)
+- [shaodahong/alfred-code](https://github.com/shaodahong/alfred-code) - Find projects from VSCode application cache.
+- [Alfy](https://github.com/sindresorhus/alfy) - This workflow is based on Alfy.
+- [Alfred 4 Workflow Open in VSCode](https://vivaxyblog.github.io/2019/08/14/alfred-workflow-open-in-vscode.html) - Related article.
+- [Alfred Workflow Open in WebStorm](https://vivaxyblog.github.io/2015/06/02/alfred-workflow-open-in-webstorm.html) - Same workflow for WebStorm.
 
 [npm-version-image]: https://img.shields.io/npm/v/alfred-open-in-vscode.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/alfred-open-in-vscode
