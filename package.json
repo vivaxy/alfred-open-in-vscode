@@ -11,8 +11,9 @@
   ],
   "author": "vivaxy <xyxuye2007@126.com>",
   "license": "GPL-3.0-or-later",
+  "type": "module",
   "dependencies": {
-    "alfy": "^0.11.0",
+    "alfy": "^2.0.0",
     "fast-glob": "^3.0.4"
   },
   "scripts": {
