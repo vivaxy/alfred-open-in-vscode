@@ -93,14 +93,13 @@ const searchStrategies = {
 function debug() {
   alfy.output([
     {
-      title: 'node version',
-      subtitle: process.version,
+      title: 'Debug alfred-open-in-vscode',
+      subtitle: `node.version=${process.version}`,
     },
   ]);
 }
 
 function main() {
-
   if (alfy.input === 'DEBUG') {
     return debug()
   }
