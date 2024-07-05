@@ -6,6 +6,8 @@ import path from 'node:path';
 import alfy from 'alfy';
 import { getProjectDirectories } from './utils/get-project-directories.js';
 
+const PROJECT_CACHE_KEY = 'projects';
+
 async function updateProjectsCache() {
   const projectsDirectories = await getProjectDirectories(process.env.projects);
   const projects = projectsDirectories.map(function(directory) {
@@ -14,14 +16,14 @@ async function updateProjectsCache() {
       absolutePath: directory,
     };
   });
-  alfy.cache.set('projects', JSON.stringify(projects));
+  alfy.cache.set(PROJECT_CACHE_KEY, JSON.stringify(projects));
 }
 
 /**
  * @returns {Array<{ name: string, absolutePath: string }>}
  */
 function getProjects() {
-  const projectsCache = /** @type {string} */(alfy.cache.get('projects'));
+  const projectsCache = /** @type {string} */(alfy.cache.get(PROJECT_CACHE_KEY));
   if (projectsCache) {
     return JSON.parse(projectsCache);
   }
