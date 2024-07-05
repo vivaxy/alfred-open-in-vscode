@@ -19,7 +19,7 @@ Alfred 4 workflow to open in VSCode.
 ## Installation
 
 - `npm i -g alfred-open-in-vscode`.
-- Set workflow environment `wds` to your project base folders. e.g. `wds: /Users/vivaxy/Developer/*`. Workflow searches only first level folders, so make sure `wds` point to them. `wds` stands for `working directories`.
+- Configure workflow, set `Project directories` to the glob pattern to match your project directories. e.g. `/Users/vivaxy/Developer/*/*`. This will find projects like `/Users/vivaxy/Developer/github/alfred-open-in-vscode` and `/Users/vivaxy/Developer/gitlab/alfred-open-in-webstorm`.
 
 ## Usage
 
@@ -34,8 +34,8 @@ Alfred 4 workflow to open in VSCode.
 
 - [shaodahong/alfred-code](https://github.com/shaodahong/alfred-code) - Find projects from VSCode application cache.
 - [Alfy](https://github.com/sindresorhus/alfy) - This workflow is based on Alfy.
+- [Alfred Open in WebStorm](https://github.com/vivaxy/alfred-open-in-webstorm) - Same workflow for WebStorm.
 - [Alfred 4 Workflow Open in VSCode](https://vivaxyblog.github.io/2019/08/14/alfred-workflow-open-in-vscode.html) - Related article.
-- [Alfred Workflow Open in WebStorm](https://vivaxyblog.github.io/2015/06/02/alfred-workflow-open-in-webstorm.html) - Same workflow for WebStorm.
 
 [npm-version-image]: https://img.shields.io/npm/v/alfred-open-in-vscode.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/alfred-open-in-vscode

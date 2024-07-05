@@ -4,53 +4,16 @@
  */
 import path from 'node:path';
 import alfy from 'alfy';
-import glob from 'fast-glob';
-
-const wds = process.env.wds.split(',');
-
-async function getWds() {
-  return (
-    await Promise.all(
-      wds.map(
-        async (wd) =>
-          await glob(wd, {
-            cwd: '/',
-            onlyDirectories: true,
-            dot: true,
-          }),
-      ),
-    )
-  ).flat();
-}
+import { getProjectsDirectories } from './utils/get-projects-directories.js';
 
 async function updateProjectsCache() {
-  const matches = await getWds();
-
-  const projects = (
-    await Promise.all(
-      matches.map(async function(wd) {
-        const names = await glob('*', {
-          cwd: wd,
-          onlyDirectories: true,
-          dot: true,
-        });
-        return {
-          wd,
-          names,
-        };
-      }),
-    )
-  ).reduce(function(all, wdProject) {
-    return [
-      ...all,
-      ...wdProject.names.map(function(name) {
-        return {
-          name,
-          wd: wdProject.wd,
-        };
-      }),
-    ];
-  }, []);
+  const projectsDirectories = await getProjectsDirectories(process.env.projects);
+  const projects = projectsDirectories.map(function (directory) {
+    return {
+      name: path.basename(directory),
+      absolutePath: directory,
+    };
+  })
   alfy.cache.set('projects', JSON.stringify(projects));
 }
 
@@ -128,13 +91,13 @@ function main() {
   }, []);
 
   const output = items.map(function(project) {
-    const absolutePath = path.join(project.wd, project.name);
+    const { name, absolutePath } = project
     return {
-      title: project.name,
+      title: name,
       uid: absolutePath,
       subtitle: absolutePath,
       arg: absolutePath,
-      autocomplete: project.name,
+      autocomplete: name,
       type: 'file',
     };
   });
