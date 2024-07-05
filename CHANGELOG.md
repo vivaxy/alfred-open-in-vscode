@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/vivaxy/alfred-open-in-vscode/compare/v1.3.1...v2.0.0) (2024-07-05)
+
+
+### Bug Fixes
+
+* update to work with node LTS ([7dacc18](https://github.com/vivaxy/alfred-open-in-vscode/commit/7dacc1870406f98f1d63ed059d906161b1220882))
+
 ### [1.3.1](https://github.com/vivaxy/alfred-open-in-vscode/compare/v1.3.0...v1.3.1) (2021-09-05)
 
 ## [1.3.0](https://github.com/vivaxy/alfred-open-in-vscode/compare/v1.2.0...v1.3.0) (2021-09-05)
