@@ -74,36 +74,40 @@ function debug() {
   ]);
 }
 
+function search(projects, input) {
+  if (input) {
+    const searchResultsByStrategy = [];
+    const searchStrategyNames = [
+      'matchFromStart',
+      'matchIncludes',
+      'keywordIncludes',
+    ];
+    projects.forEach(function (project) {
+      for (let i = 0; i < searchStrategyNames.length; i++) {
+        const searchStrategy = searchStrategies[searchStrategyNames[i]];
+        if (searchStrategy(project.name, alfy.input)) {
+          searchResultsByStrategy[i] = searchResultsByStrategy[i] || [];
+          searchResultsByStrategy[i].push(project);
+          return;
+        }
+      }
+    });
+    return searchResultsByStrategy.reduce(function (all, searchResults) {
+      return [...all, ...searchResults];
+    }, []);
+  }
+  return projects;
+}
+
 function main() {
   if (alfy.input === 'DEBUG') {
     return debug();
   }
 
   const projects = getProjects();
-  const searchResultsByStrategy = [];
-  const searchStrategyNames = [
-    'matchFromStart',
-    'matchIncludes',
-    'keywordIncludes',
-  ];
+  const searchResults = search(projects, alfy.input);
 
-  projects.forEach(function(project) {
-    for (let i = 0; i < searchStrategyNames.length; i++) {
-      const searchStrategy = searchStrategies[searchStrategyNames[i]];
-      if (searchStrategy(project.name, alfy.input)) {
-        searchResultsByStrategy[i] = searchResultsByStrategy[i] || [];
-        searchResultsByStrategy[i].push(project);
-        return;
-      }
-    }
-  });
-
-  const items = searchResultsByStrategy.reduce(function(all, searchResults) {
-    return [...all, ...searchResults];
-  }, []);
-
-  const output = items.map(function(project) {
-    const { name, absolutePath } = project;
+  const output = searchResults.map(function ({ name, absolutePath }) {
     return {
       title: name,
       uid: absolutePath,
