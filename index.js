@@ -4,27 +4,37 @@
  */
 import path from 'node:path';
 import alfy from 'alfy';
-import { getProjectsDirectories } from './utils/get-projects-directories.js';
+import { getProjectDirectories } from './utils/get-project-directories.js';
 
 async function updateProjectsCache() {
-  const projectsDirectories = await getProjectsDirectories(process.env.projects);
-  const projects = projectsDirectories.map(function (directory) {
+  const projectsDirectories = await getProjectDirectories(process.env.projects);
+  const projects = projectsDirectories.map(function(directory) {
     return {
       name: path.basename(directory),
       absolutePath: directory,
     };
-  })
+  });
   alfy.cache.set('projects', JSON.stringify(projects));
 }
 
+/**
+ * @returns {Array<{ name: string, absolutePath: string }>}
+ */
 function getProjects() {
-  const projectsCache = alfy.cache.get('projects');
+  const projectsCache = /** @type {string} */(alfy.cache.get('projects'));
   if (projectsCache) {
     return JSON.parse(projectsCache);
   }
   return [];
 }
 
+/**
+ * @typedef {(value: string, input: string) => boolean} SearchStrategy
+ */
+/**
+ *
+ * @type {{matchFromStart: SearchStrategy, keywordIncludes: SearchStrategy, matchIncludes: SearchStrategy}}
+ */
 const searchStrategies = {
   matchFromStart(value, input) {
     function format(v) {
@@ -64,7 +74,7 @@ function debug() {
 
 function main() {
   if (alfy.input === 'DEBUG') {
-    return debug()
+    return debug();
   }
 
   const projects = getProjects();
@@ -91,7 +101,7 @@ function main() {
   }, []);
 
   const output = items.map(function(project) {
-    const { name, absolutePath } = project
+    const { name, absolutePath } = project;
     return {
       title: name,
       uid: absolutePath,
