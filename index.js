@@ -74,6 +74,11 @@ function debug() {
   ]);
 }
 
+/**
+ * @param {Array<{name: string, absolutePath: string}>} projects
+ * @param {string} input
+ * @returns {Array<{name: string, absolutePath: string}>}
+ */
 function search(projects, input) {
   if (input) {
     const searchResultsByStrategy = [];
@@ -114,7 +119,7 @@ function main() {
       subtitle: absolutePath,
       arg: absolutePath,
       autocomplete: name,
-      type: 'file',
+      type: /** @type {'file'} */('file'),
     };
   });
 
