@@ -2,9 +2,9 @@
  * @since 2019-08-14 02:43
  * @author vivaxy
  */
-const path = require('path');
-const alfy = require('alfy');
-const glob = require('fast-glob');
+import path from 'node:path';
+import alfy from 'alfy';
+import glob from 'fast-glob';
 
 const wds = process.env.wds.split(',');
 
