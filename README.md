@@ -19,7 +19,7 @@ Alfred 4 workflow to open in VSCode.
 ## Installation
 
 - `npm i -g alfred-open-in-vscode`.
-- Set workflow environment `wds` to your project base folders. e.g. `wds: /Users/vivaxy/Developers/*`. Workflow searches only first level folders, so make sure `wds` point to them. `wds` stands for `working directories`.
+- Set workflow environment `wds` to your project base folders. e.g. `wds: /Users/vivaxy/Developer/*`. Workflow searches only first level folders, so make sure `wds` point to them. `wds` stands for `working directories`.
 
 ## Usage
 
